@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block content %}
+<style>
+body {
+	display:flex;
+}
+</style>
+<div class="container">
+	<div>
+			{% include "components/errors.html" %}
+
+			{% if integrations.mlc() %}
+			<a class="btn btn-secondary btn-lg btn-block" href="{{ url_for('auth.oauth_login') }}">
+				Login with Major League Cyber
+			</a>
+
+			<hr>
+			{% endif %}
+
+			{% with form = Forms.auth.LoginForm() %}
+	</div>
+	<div>
+		<form method="post" accept-charset="utf-8" autocomplete="off">
+			<div class="login">
+				<h2>用户登录</h2>
+				<div class="login_box">
+					{{ form.name(class="login_box", value=name) }}
+					<label for="name">用户名</label>
+				</div>
+				<div class="login_box">
+					{{ form.password(class="login_box", value=password) }}
+					<label for="name">密码</label>
+				</div>
+			<a>
+			{{ form.submit(class="submit") }}
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			</a>
+			{{ form.nonce() }}
+			</div>	
+			<div class="col-md-6">
+				<a class="float-left align-text-to-button" href="{{ url_for('auth.reset_password') }}">
+					Forgot your password?
+				</a>
+			</div>
+		</form>
+		{% endwith %}
+	</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
