@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="{{ url_for('views.themes', path='css/core.css') }}">
 	{% block stylesheets %}
 	{% endblock %}
-	<script defer src="{{ url_for('views.themes', path='js/leaf.js') }}"></script>
+	<script defer src="{{ url_for('views.themes', path='js/starsky.js') }}"></script>
 	{{ Plugins.styles }}
 	<script type="text/javascript">
 		var init = {
@@ -30,19 +30,22 @@
 	{{ Configs.theme_header }}
 </head>
 <body>
-<style>
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  body {
-    	justify-content: center;
-		align-items: center;
-    	height: 100vh;
-    	background: linear-gradient(#141e30, #243b55);
-  }
-</style>
+	<style>
+	* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	body {
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-image: radial-gradient(ellipse farthest-corner at center top, #000d4d 0%, #000105 100%);
+			background-attachment: fixed;
+			/* background: linear-gradient(#141e30, #243b55); */
+	}
+	</style>
+	<canvas id="canv" style="position: absolute; z-index: -1;"></canvas>
 	{% include "components/navbar.html" %}
 
 	<main role="main">

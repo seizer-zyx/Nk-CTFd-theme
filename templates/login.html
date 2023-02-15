@@ -35,19 +35,19 @@ body {
 					{{ form.password(class="login_box", value=password) }}
 					<label for="name">密码</label>
 				</div>
-			<a>
-			{{ form.submit(class="submit") }}
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			</a>
-			{{ form.nonce() }}
-			</div>	
-			<div class="col-md-6">
-				<a class="float-left align-text-to-button" href="{{ url_for('auth.reset_password') }}">
-					Forgot your password?
+				<a>
+				{{ form.submit(class="submit") }}
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
 				</a>
+				{{ form.nonce() }}
+				<div>
+					<a class="float-left align-text-to-button" href="{{ url_for('auth.reset_password') }}">
+						Forgot your password?
+					</a>
+				</div>
 			</div>
 		</form>
 		{% endwith %}

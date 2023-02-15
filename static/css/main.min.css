@@ -10315,6 +10315,7 @@ blockquote {
 }
 
 .modal-content {
+  background-color: rgba(7, 15, 48, 0.368627451);
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
   border-radius: 0 !important;
